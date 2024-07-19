@@ -9,7 +9,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShell.x86_64-linux.default = pkgs.mkShell {
+      devShells.x86_64-linux.default = pkgs.mkShell {
 	packages = with pkgs; [
 	  # Packages made available on the CLI
 	];
