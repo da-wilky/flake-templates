@@ -1,7 +1,8 @@
-{
+rec {
   description = "Custom Shell Flake";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  #inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable;
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
   outputs = { self, nixpkgs, ... }@inputs: 
     let
@@ -14,9 +15,12 @@
 	  # Packages made available on the CLI
 	];
 
-	#shellHook = ''
-	#  echo "Custom Shell Flake"
-	#'';
+	shellHook = ''
+	  echo
+  	  echo
+	  echo
+	  echo -e "\033[1;31mWelcome to the ${description} environment!"
+	'';
       };
     };
 }
